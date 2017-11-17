@@ -1,0 +1,6 @@
+sum(X,2) sum of rows; sum(X,1) sum of columns
+different between regularization for neral network and logistic regression
+logistic regression : theta: sum(theta(2:end),1) .^ 2
+neural network: sum(sum(theta(:,2:end) .^ 2 , 2),1);
+
+!!!always check the variable name is correct!!!
