@@ -1,0 +1,12 @@
+function to check the index of element in a cell array
+cell array: access use arr{i}
+1. strfind: not good for cell array; will return a cell array of index
+  if not find, gives an [] (0*0)
+2. ismember: ismember(A,B) returns an array of boolean value(if A is 1*1, then only one value)
+3. cellfun(map on cell arr)
+4. find(X) returns a vector of linear indices of all non-zero elements
+  find(X,n) finds the fisrt n indices
+  can do find(~x); find(x<10); find(strcmp(x,str))
+  trick: map a matrix to a 0,1 matrix and use the find
+  [row,col]/[row,col,value]
+  for processEmail: can use find(ismember...) or find(strcmp(...))

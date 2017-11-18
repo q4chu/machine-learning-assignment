@@ -27,25 +27,25 @@ errors = zeros(size(C_array),size(sigma_array));
 %
 
 %training process
-for i = 1:size(C_array)
-  for j = 1:size(sigma_array)
-    sigma_tmp = sigma_array(j);
-    model= svmTrain(X, y, C_array(i,1), @(x1, x2) gaussianKernel(x1, x2, sigma_tmp));
-    predictions = svmPredict(model,Xval);
-    error = mean(double(predictions ~= yval));
-    errors(i,j) = error; %i,j not i*j
-  end
-end
-[min_err,idx] = min(errors(:));
-[row,col] = ind2sub(size(errors),idx);
-fprintf("min_row:%f\n", row);
-fprintf("min_col:%f\n", col);
-C = C_array(row);
-sigma = sigma_array(col);
+%for i = 1:size(C_array)
+%  for j = 1:size(sigma_array)
+%    sigma_tmp = sigma_array(j);
+%    model= svmTrain(X, y, C_array(i,1), @(x1, x2) gaussianKernel(x1, x2, sigma_tmp));
+%    predictions = svmPredict(model,Xval);
+%    error = mean(double(predictions ~= yval));
+%    errors(i,j) = error; %i,j not i*j
+%  end
+%end
+%[min_err,idx] = min(errors(:));
+%[row,col] = ind2sub(size(errors),idx);
+%fprintf("min_row:%f\n", row);
+%fprintf("min_col:%f\n", col);
+%C = C_array(row);
+%sigma = sigma_array(col);
 
 %result
-%C = 1
-%sigma = 0.1
+C = 1
+sigma = 0.1
 
 %tried:
 %1. data type error: if the variable cannot handle double
