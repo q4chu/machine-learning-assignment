@@ -4,3 +4,12 @@ logistic regression : theta: sum(theta(2:end),1) .^ 2
 neural network: sum(sum(theta(:,2:end) .^ 2 , 2),1);
 
 !!!always check the variable name is correct!!!
+
+min:
+min(x) calculates the minimum of columns
+min(x,[],2) calculates the minimum of rows
+index: [m,i] = min(x);
+minimum of whole matrix: min(x(:)) get the index: [m,I] = min(X(:)) [I_row, I_col] = ind2sub(size(X),I)
+if nan value: min(x,'omitnan'/'includenan');
+
+never name a variable same with the identifier name!!!!
